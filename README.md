@@ -41,6 +41,8 @@ In this project we have combined all essential libraries that we learned so far 
 
 √ Interpret the results and conclude
 
+
+
 ## Obtain and load the dataset
 
 √. Imported Some Essential Libraries to start of with 
@@ -66,8 +68,23 @@ from sklearn.metrics import mean_squared_error
 
 from sklearn.feature_selection import RFE 
 ```
-√. Loading the Dataset
+
+
+√. Loading and Verifying the Dataset
+
+
 ``` data = pd.read_csv('kc_house_data.csv') ```
 
+```print(df.isnull().sum(),'\n\n')
+ print(df.info(),'\n\n')
+ print(df.nunique())
+ print(df[df.duplicated()])
+ ```
 
 
+## Scrubbing and Cleaning Data
+. df['waterfront'] = df['waterfront'].fillna(0.0) - Replaced all the null values
+. df = df.drop(['lat', 'long', 'sqft_living15', 'sqft_lot15', 'id','view'], axis=1) -- Dropped the columns
+df['date'] = df['date'].astype('datetime64[ns]') 
+#Converting the 'sqft_basement' from object to a float datatype
+df['sqft_basement'] = df['sqft_basement'].astype('float64')
