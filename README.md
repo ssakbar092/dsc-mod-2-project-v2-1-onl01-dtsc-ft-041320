@@ -204,6 +204,8 @@ t -= 0.5 # Subtract 0.5 from the top
 plt.ylim(b, t) # update the ylim(bottom, top) values
 plt.show()
 ```
+![image](https://user-images.githubusercontent.com/47164862/83902276-b45d6380-a721-11ea-8664-25ef85ea6c7c.png)
+![image](https://user-images.githubusercontent.com/47164862/83902316-c939f700-a721-11ea-8450-d8ff0081f5a5.png)
 
 √. Conducted the Shapiro and KS-Test to check for Normality -- https://bit.ly/37bm8Qk
 √. Converted all the numerical columns into Normal by Log Transformation, Mean Normalization , Standardization and Creating Function
