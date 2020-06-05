@@ -84,5 +84,205 @@ from sklearn.feature_selection import RFE
 
 ## Scrubbing and Cleaning Data -- https://bit.ly/2UhsOHo
 √. Replaced all the null values in (waterfront,yr_renovated,sqft_basement)
+
 √. Converted the date column in date time format
-√. 
+
+√.Converted the 'sqft_basement' from int to float64
+
+√. Converted the 'yr_renovated' and 'sqft_basement' into binary to save it from creating Label Encoder
+
+√. Feature Engineering ::
+
+ Created a new column in the Dataframe that gives the Age of the House and the Percentage of the House Area
+ 
+ ```df['age'] = df['yr_sold'] - df['yr_built']```
+ ``` df['perc'] = (df['sqft_lot'] - (df['sqft_above'] / df['floors'])) / df['sqft_lot'] ```
+ 
+√. Created a function to Remove Outliers
+
+``` 
+    def remove_outliers(df, column_name, threshold=4):
+    z_scores = stats.zscore(df[column_name])
+    indices = np.abs(np.where(z_scores > threshold))
+    return indices[0]
+    
+columns_to_check = ['price', 'bedrooms', 'bathrooms', 'sqft_living', 'sqft_lot']
+
+#['price', 'bedrooms', 'bathrooms', 'sqft_living', 'sqft_lot', 'floors','condition', 'grade', 'sqft_above', 'sqft_basement', 'yr_built', 'yr_renovated', 'zipcode']
+all_indices = []
+for column in columns_to_check:
+    indices = remove_outliers(df, column, threshold=3)
+    all_indices.extend(indices)
+all_indices = np.unique(all_indices)
+
+# Remove outliers 4 standard deviations from mean in all columns
+df = df.drop(index=all_indices)
+df.shape
+```
+
+## Exploratory Data Analysis
+
+#### 1.What are the most/least expensive homes based on zipcodes (cheapest area to live in vs most expensive)?
+
+![image](https://user-images.githubusercontent.com/47164862/83890602-95ef6c00-a711-11ea-9d03-08c141846537.png)
+
+Analysis of EDA::
+~1910 & ~1940's and 2000's are among the highest sold homes.
+Surprisingly yr_build and yr_renovation had correlations of 0.053965 & 0.117858 with the house price
+homes in the 1910's were inspired by the Victotian style architecture. These houses can make a profit by being sold to historical societies or used in movie sets. Renovation is likely negligible because buyers who purchase lived in home probably plan to do renovations of their own, making the current renovations irrelevant
+
+
+
+
+#### 2.What's the lowest grade/condition with the highest profit and vice versa?
+
+![image](https://user-images.githubusercontent.com/47164862/83888356-56278500-a70f-11ea-95ee-b29bb70fbc24.png)
+
+![image](https://user-images.githubusercontent.com/47164862/83888417-68a1be80-a70f-11ea-891d-215b4c3e4bdf.png)
+
+
+Analysis of EDA::
+
+
+The violin plot and the joint plot plotted above derives clearly that there is clearly a great relationship between the "Grade" of the house and "Price". The houses that yield to the most of the least grade i.e grade 3 is about 260,000, where as when we compare with the Grade 12 house, they yield about 1,500,000 .This clearly depicts that as the grade of the houses goes higher the rate of price goes higher which inturns more profit through the sale of King County residential department.
+
+
+
+
+#### 3.Correlation/relationship between yr_built vs grade? (what age is considered vintage/"desirable old"?).
+
+![image](https://user-images.githubusercontent.com/47164862/83890276-2c6f5d80-a711-11ea-872a-c5cbed155e3a.png)
+
+Analysis of EDA::
+
+As grade increases, the price of the home increases. Grade and Price had a (positive) correlation coefficient of 0.667964
+Yr_built and grade had a (positive) correlation of 0.447854. This is low. Homes built in the years 1920-1911 had the lowest grades, and lowest average price sold.Homes built in the year 1984-1975 had the highest grades and average home prices.Homes in the 70s are considered vintage
+
+
+
+
+
+
+####  4.Whats the best month/time of year for buying and selling? (build model to predict year).
+
+![image](https://user-images.githubusercontent.com/47164862/83889014-3cd30880-a710-11ea-907c-442b10f555fb.png)
+
+Analysis of EDA::
+
+
+With the help of the plot graph it is clear that the months of the year does effect on the sale of the house and its prices. This plot graph depicts clearly that the peak month for the Selling houses is 'April' on an average of about $560,000 followed by least month for the sale is February with the average sale of $510,000. As we see there is quite a significant amount of drop in the February but then spikes again March and stays consistent till September or October. 
+Based on the data, this graph shows the average sell prices of homes based on the month of the year. The highs and lows range from a price difference of around 10%.  The peak months to sell are March, April, May, and June - we could assuming this is due to tax return season, and end of the public school year.  The low months, being better for buyers, are December, January, and February - which could be explained by the holidays and low average temperatures
+
+
+## Initializing for Modeling
+√. Created a function to highlight the Multicolinearity with the threshold of 0.75
+``` df_corr=df.corr().abs()
+
+# Creating a function to highlight the correlation above the threshold value of 0.75
+def Colli_thresh(val):
+    """
+    Takes a scalar and returns a string with
+    the css property `'color: red'` for negative
+    strings, black otherwise.
+    """
+    color = 'red' if val > 0.75 else 'black'
+    return 'color: %s' % color
+
+highlight_thresh = df_corr.style.applymap(Colli_thresh)
+highlight_thresh
+```
+√.Created a seaborn heatmap to visualize the multicolinearity among the other columns
+ ``` 
+ corr_cont = df[continuous].corr().abs()
+(corr_cont)
+
+# Mapping the correlation among the continous variable
+sns.heatmap(corr_cont, annot=True)
+b, t = plt.ylim() # discover the values for bottom and top
+b += 0.5 # Add 0.5 to the bottom
+t -= 0.5 # Subtract 0.5 from the top
+plt.ylim(b, t) # update the ylim(bottom, top) values
+plt.show()
+```
+
+√. Conducted the Shapiro and KS-Test to check for Normality -- https://bit.ly/37bm8Qk
+√. Converted all the numerical columns into Normal by Log Transformation, Mean Normalization , Standardization and Creating Function
+```
+def norm_feat(series):
+    return (series - series.mean())/series.std()
+for feat in norm_check.columns:
+    df[feat] = norm_feat(df[feat])
+# print(df.describe())
+
+norm_df = norm_feat(norm_check)
+norm_df.head()
+norm_df.hist(figsize  = [8, 8]);
+```
+
+√. Created a dummy variables using Label Encoder and through a simple way of using Pandas ``` pd.get_dummies(x,drop_first=True)```
+
+
+## Modeling for Data -- https://bit.ly/3cAvupU
+
+√. Used ```sns.jointplot() ``` to see the linear regression of all the features in individual graphs
+√. Created a complete Function to Get the Full Regression Analysis
+
+## Model 
+
+![image](https://user-images.githubusercontent.com/47164862/83892405-3b0b4400-a714-11ea-996a-5457eccecd69.png)
+![image](https://user-images.githubusercontent.com/47164862/83892650-92111900-a714-11ea-8222-f8cc9e344c97.png)
+
+## Final Model
+
+√. Used a train test split method model to check linear regression model
+```
+from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random_state=42)
+
+print(len(X_train), len(X_test), len(y_train), len(y_test))
+```
+
+√. Used the same Linear Regression to run the same model in Scikit Learn
+```
+linreg = LinearRegression()
+linreg.fit(X_train, y_train)
+
+# Train-Test Split using Sklearn
+y_hat_train = linreg.predict(X_train)
+y_hat_test = linreg.predict(X_test)
+
+train_mse = mean_squared_error(y_train, y_hat_train)
+test_mse = mean_squared_error(y_test, y_hat_test)
+print('Train Mean Squarred Error:', train_mse)
+print('Test Mean Squarred Error:', test_mse)
+```
+
+√.  Build the function to manually complete the K-Fold Validation
+√.  Used the Cross the Validation Score from Scikit learn model
+```
+cv_5_results  = np.mean(cross_val_score(linreg, X, y, cv=5,  scoring='neg_mean_squared_error'))
+cv_10_results = np.mean(cross_val_score(linreg, X, y, cv=10, scoring='neg_mean_squared_error'))
+cv_20_results = np.mean(cross_val_score(linreg, X, y, cv=20, scoring='neg_mean_squared_error'))
+
+print('5-Fold Cross-Validation: ' ,cv_5_results)
+print('10-Fold Cross-Validation: ' ,cv_10_results)
+print('20-Fold Cross-Validation: ' ,cv_10_results)
+```
+
+## Predictions with the Essential Features
+#### GRADE
+![image](https://user-images.githubusercontent.com/47164862/83893933-3fd0f780-a716-11ea-8388-a7c9b5d66105.png)
+
+#### Square Foot Living
+![image](https://user-images.githubusercontent.com/47164862/83894408-e3220c80-a716-11ea-853f-d4106d5fcae8.png)
+
+#### Count of Bathrooms
+![image](https://user-images.githubusercontent.com/47164862/83894503-fe8d1780-a716-11ea-8375-a7a45abc35e1.png)
+
+
+
+
+
+
+
+
