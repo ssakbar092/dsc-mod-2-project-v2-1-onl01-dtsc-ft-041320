@@ -280,9 +280,31 @@ print('20-Fold Cross-Validation: ' ,cv_10_results)
 ![image](https://user-images.githubusercontent.com/47164862/83894503-fe8d1780-a716-11ea-8375-a7a45abc35e1.png)
 
 
+#### Interpretation
+
+The final linear regression model predicts that the features that could yield the better prices. * The selected features predicts 61% and 65% of the variance of the target price.The P-value indicates that all relationships aren't random and all feature coefficients reveal positive correlation. With the nature of the data irrespective numerous of modeling it ranges the the R2 value between 55% to 65% . The data results can range low in R2 due to some additional factors like outliers,normalization, multicolinearity.
+Train Mean Squared Error yielded 0.00229 where as Test Mean Squared Error yielded 0.002234 which was 0.00005 difference.
+
+#### Y= -7.60*(price) + 1.07*(bedrooms) + 2.94*(bathrooms)+ 4.82*(sqft_living)+ 4.02*(grade)+ 5.54*(yr_built)+ 1.22*(floors)+6.18* (waterfront)
 
 
+## Recommendations
+
+√. Increase the size and the number of the bedrooms::
+ Based on the demographic area of the house, buyers are more attracted towards the style of the bedrooms and the size of the bedroom. In most cases the bedrooms could be large and just few of them or make a decent sized bedrooms and give more features like the ceiling and lighting fixtures and more autonamious tech that could ease them for opening lights, close the blinds. Designs on the ceiling in the bedroom 
+
+√. Increase in the size and the number of bathrooms::
+With the high demand of rooms comes a high demand of the bathrooms. If the house is predicted to be built on large scale. It should be an ease of convenience in placing bathrooms in each floor and not necessarily a full bath but could add just half bath. Add little more designed quality bath tubs and faucets.
+
+√. Size of the House::
+As we discussed earlier in situations compared to size of the bedrooms, there is high possibilty that buyers would love to maintain square foot living of the house in a ratio to scale manner where all the bedrooms are in one proportion where as the living and dining would make a great difference. Not just living area but also the Patio and Lawn should be given a good amount of area. After all the with the size of house there should be some leisure in the big lawn area.
+
+√. Grade and Condition ::-
+Based on the regression these are considered to be the most important features that determines the house prices. There are list of grades that determine whether these are graded with the new stylish models or old school model based on the ranking. So does comes with the condition. Condition of the house determines if the house is in the state of living or not. As we know that the older the homes the conditions gets degraded. Buyers in the market for King County are looking for better quality conditioned houses that not neccessarily are built brand new but would keep it maintained to check for the houses worn and tear condition and update it from time to time.
 
 
+√.  Classify Houses With Vintage:
+It is recommended to suggest the buyers to offer them a competitative better rate when it comes to Vintage Houses that has been taken care for a long period of time.
 
-
+## Further Work
+As discussed earlier there is great possibilty of outliers, linearity and non-normalized and with the restriction of given time which consices us to give limited result but guide you as one of the best innovative methods to improve the selling prices. But as we continue to build models we can predict best suited houses for the buyers that could potentially be more benefit the firm by analyzing the needs by narrowing the buyers and pin pointing the questions that could yield best houses for the buyers. Also build a model for the sellers and other realty states so that they can predict what prices to be set and what type of houses to build in the upcoming venture based on the demographic area.
