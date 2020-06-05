@@ -83,11 +83,6 @@ from sklearn.feature_selection import RFE
 
 
 ## Scrubbing and Cleaning Data -- https://bit.ly/2UhsOHo
-√.```df['waterfront'] = df['waterfront'].fillna(0.0) - Replaced all the null values --- Replaced all Null Values
-
-√. df = df.drop(['lat', 'long', 'sqft_living15', 'sqft_lot15', 'id','view'], axis=1) -- Dropped all unncessary columns
-
-df['date'] = df['date'].astype('datetime64[ns]') 
-
-#Converting the 'sqft_basement' from object to a float datatype
-df['sqft_basement'] = df['sqft_basement'].astype('float64')
+√. Replaced all the null values in (waterfront,yr_renovated,sqft_basement)
+√. Converted the date column in date time format
+√. 
