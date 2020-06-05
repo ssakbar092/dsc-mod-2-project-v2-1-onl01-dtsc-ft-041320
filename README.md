@@ -308,5 +308,9 @@ Based on the regression these are considered to be the most important features t
 √.  Classify Houses With Vintage:
 It is recommended to suggest the buyers to offer them a competitative better rate when it comes to Vintage Houses that has been taken care for a long period of time.
 
-## Further Work
+## Future Work
 As discussed earlier there is great possibilty of outliers, linearity and non-normalized and with the restriction of given time which consices us to give limited result but guide you as one of the best innovative methods to improve the selling prices. But as we continue to build models we can predict best suited houses for the buyers that could potentially be more benefit the firm by analyzing the needs by narrowing the buyers and pin pointing the questions that could yield best houses for the buyers. Also build a model for the sellers and other realty states so that they can predict what prices to be set and what type of houses to build in the upcoming venture based on the demographic area.
+
+## Conclusion
+This concludes the dataset with linear regression model and predictions.
+
