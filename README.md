@@ -43,7 +43,8 @@ In this project we have combined all essential libraries that we learned so far 
 
 
 
-## Obtain and load the dataset
+## Obtain and load the dataset 
+shorturl.at/hkxH6
 
 √. Imported Some Essential Libraries to start of with 
 
@@ -83,8 +84,11 @@ from sklearn.feature_selection import RFE
 
 
 ## Scrubbing and Cleaning Data
-. df['waterfront'] = df['waterfront'].fillna(0.0) - Replaced all the null values
-. df = df.drop(['lat', 'long', 'sqft_living15', 'sqft_lot15', 'id','view'], axis=1) -- Dropped the columns
+√.```df['waterfront'] = df['waterfront'].fillna(0.0) - Replaced all the null values --- Replaced all Null Values
+
+√. df = df.drop(['lat', 'long', 'sqft_living15', 'sqft_lot15', 'id','view'], axis=1) -- Dropped all unncessary columns
+
 df['date'] = df['date'].astype('datetime64[ns]') 
+
 #Converting the 'sqft_basement' from object to a float datatype
 df['sqft_basement'] = df['sqft_basement'].astype('float64')
