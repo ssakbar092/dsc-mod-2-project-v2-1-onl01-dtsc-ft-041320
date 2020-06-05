@@ -1,160 +1,316 @@
-
-# Module 2 Final Project
-
-
-## Introduction
-
-In this lesson, we'll review all of the guidelines and specifications for the final project for Module 2.
-
-## Objectives
-You will be able to:
-* Describe all required aspects of the final project for Module 2
-* Describe all required deliverables
-* Describe what constitutes a successful project
-
-## Final Project Summary
-
-Another module down--you're almost half way there!
-
-![awesome](https://raw.githubusercontent.com/learn-co-curriculum/dsc-mod-2-project-v2-1/master/halfway-there.gif)
-
-All that remains in Module 2 is to put our newfound data science skills to use with a final project! You should expect this project to take between 20 and 25 hours of solid, focused effort. If you're done way quicker, go back and dig in deeper or try some of the optional "level up" suggestions. If you're worried that you're going to get to 30 hrs and still not even have the data imported, reach out to an instructor in Slack ASAP to get some help!
-
-## The Dataset
-
-For this project, you'll be working with the King County House Sales dataset. We've modified the dataset to make it a bit more fun and challenging.  The dataset can be found in the file `"kc_house_data.csv"`, in this repo.
-
-The description of the column names can be found in the column_names.md file in this repository. As with most real world data sets, the column names are not perfectly described, so you'll have to do some research or use your best judgment if you have questions relating to what the data means.
-
-You'll clean, explore, and model this dataset with a multivariate linear regression to predict the sale price of houses as accurately as possible.
-
-## The Deliverables
-
-For online students, there will be five deliverables for this project (Note: On-campus students may have different requirements, please speak with your instructor):
-
-1. A well documented **Jupyter Notebook** containing any code you've written for this project and comments explaining it. This work will need to be pushed to your GitHub repository in order to submit your project.  
-2. An organized **README.md** file in the GitHub repository that describes the contents of the repository. This file should be the source of information for navigating through the repository.
-3. A short **Keynote/PowerPoint/Google Slides presentation** (delivered as a PDF export) giving a high-level overview of your methodology and recommendations for non-technical stakeholders. Make sure to also add and commit this pdf of your non-technical presentation to your repository with a file name of presentation.pdf.
-4. **[A Blog Post](https://github.com/learn-co-curriculum/dsc-welcome-blogging-v2-1)**	
-5. A **Video Walkthrough** of your non-technical presentation. Some common video recording tools used are Zoom, Quicktime, and Nimbus. After you record your presentation, publish it on a service like YouTube or Google Drive, you will need a link to the video to submit your project.
-
-Note: On-campus students may have different requirements, please speak with your instructor.
-
-### Jupyter Notebook Must-Haves
-
-For this project, your Jupyter Notebook should meet the following specifications:
-
-#### Organization/Code Cleanliness
-
-* The notebook should be well organized, easy to follow,  and code should be commented where appropriate.  
-    * Level Up: The notebook contains well-formatted, professional looking markdown cells explaining any substantial code.  All functions have docstrings that act as professional-quality documentation
-* The notebook is written for technical audiences with a way to both understand your approach and reproduce your results. The target audience for this deliverable is other data scientists looking to validate your findings.
-
-#### Visualizations & EDA
-
-* Your project contains at least 4 meaningful data visualizations, with corresponding interpretations. All visualizations are well labeled with axes labels, a title, and a legend (when appropriate)  
-* You pose at least 3 meaningful questions and answer them through EDA.  These questions should be well labeled and easy to identify inside the notebook.
-    * **Level Up**: Each question is clearly answered with a visualization that makes the answer easy to understand.   
-* Your notebook should contain 1 - 2 paragraphs briefly explaining your approach to this project.
-
-#### Model Quality/Approach
-
-* Your model should not include any predictors with p-values greater than .05.  
-* Your notebook shows an iterative approach to modeling, and details the parameters and results of the model at each iteration.  
-    * **Level Up**: Whenever necessary, you briefly explain the changes made from one iteration to the next, and why you made these choices.  
-* You provide at least 1 paragraph explaining your final model.   
-* You pick at least 3 coefficients from your final model and explain their impact on the price of a house in this dataset.   
+## Module 2 Project
+This is the second project which consists of Data Analysis on the Kings County Reality Dataset creating a meaning insightful and predicting the prices of the houses in King County  by deriving Linear Regression and creating Models to analyse which feature of the house could substantially create a great increase in the prices of the houses. This project is aimed to assist to the Real Estate companies and aiding the other Real Estate Companies in deciding what factors could determining and setting up the prices of the houses in King County.
 
 
-### Non-Technical Presentation Must-Haves
+## -------------------------------------OUTLINE BEGINS------------------------------------- 
 
-Another deliverable should be a Keynote, PowerPoint or Google Slides presentation delivered as a pdf file in your fork of this repository with the file name of `presentation.pdf` detailing the results of your project.  Your target audience is non-technical people interested in using your findings to maximize their profit when selling their home.
-
-Your presentation should:
-
-* Contain between 5 - 10 professional-quality slides.  
-    * **Level Up**: The slides should use visualizations whenever possible, and avoid walls of text.
-* Take no more than 5 minutes to present.   
-* Avoid technical jargon and explain the results in a clear, actionable way for non-technical audiences.   
-
-**_Based on the results of your models, your presentation should discuss at least two concrete features that highly influence housing prices._**
-
-### Blog Post Must-Haves
-
-Refer back to the [Blogging Guidelines](https://github.com/learn-co-curriculum/dsc-welcome-blogging-v2-1) for the technical requirements and blog ideas.
+This repository consists of the following list of files
+√ A Complete Linear Regression Analysis along with One of Four Exploratory Data Analysis(EDA) questions answered(Since it was group project)
+√ A complete ReadMe.md file that gives the outline of the project
+√ A Blog Post based on the Project that gives an idea to my peers about the project
 
 
-## The Process 
-The process for this project is identical to the process you followed for your module 1 project. We specified it again below as a refresher.
-(Note: On-campus students may have different processes, please speak with your instructor)
+## DATASET
 
-### 1. Getting Started
+For this project we strictly used a credible dataset to keep it concise and to prevent our data from any other outliers by not deriving any more data through Web Scraping to complete our Linear Regression and predict our Model.
 
-Please start by reviewing this document. If you have any questions, please ask them in Slack ASAP so (a) we can answer the questions and (b) so we can update this repository to make it clearer.
+√ "kc_house_data.csv"
 
-Be sure to let the instructor team know when you’ve started working on a project, either by reaching out over Slack or, if you are in a full-time or part-time cohort, by connecting with your Cohort Lead in your weekly 1:1. If you’re not sure who to reach out to, post in the #online-ds-sp-000 channel in Slack.
+## Exploratory Data Analysis Questions
 
-Once you're done with this module, please start on the project. Do that by forking this repository, cloning it locally, and working in the student.ipynb file. Make sure to also add and commit a pdf of your presentation to the repository with a file name of `presentation.pdf`.
+1.What are the most/least expensive homes based on zipcodes (cheapest area to live in vs most expensive)?
 
-### 2. The Project Review
+2.What's the lowest grade/condition with the highest profit and vice versa?
 
-_Note: On-campus students may have different review processes, please speak with your instructor._
+3.Correlation/relationship between yr_built vs grade? (what age is considered vintage/"desirable old"?).
 
-> **When you start on the project, please also reach out to an instructor immediately to schedule your project review** (if you're not sure who to schedule with, please ask in Slack!)
-
-#### What to expect from the Project Review
-
-Project reviews are focused on preparing you for technical interviews. Treat project reviews as if they were technical interviews, in both attitude and technical presentation *(sometimes technical interviews will feel arbitrary or unfair - if you want to get the job, commenting on that is seldom a good choice)*.
-
-The project review is comprised of a 45 minute 1:1 session with one of the instructors. During your project review, be prepared to:
-
-#### 1. Deliver your PDF presentation to a non-technical stakeholder.
-In this phase of the review (~10 mins) your instructor will play the part of a non-technical stakeholder that you are presenting your findings to. The presentation  should not exceed 5 minutes, giving the "stakeholder" 5 minutes to ask questions.
-
-In the first half of the presentation (2-3 mins), you should summarize your methodology in a way that will be comprehensible to someone with no background in data science and that will increase their confidence in you and your findings. In the second half (the remaining 2-3 mins) you should summarize your findings and be ready to answer a couple of non-technical questions from the audience. The questions might relate to technical topics (sampling bias, confidence, etc) but will be asked in a non-technical way and need to be answered in a way that does not assume a background in statistics or machine learning. You can assume a smart, business stakeholder, with a non-quantitative college degree.
-
-#### 2. Go through the Jupyter Notebook, answering questions about how you made certain decisions. Be ready to explain things like:
-    * "How did you pick the question(s) that you did?"
-    * "Why are these questions important from a business perspective?"
-    * "How did you decide on the data cleaning options you performed?"
-    * "Why did you choose a given method or library?"
-    * "Why did you select those visualizations and what did you learn from each of them?"
-    * "Why did you pick those features as predictors?"
-    * "How would you interpret the results?"
-    * "How confident are you in the predictive quality of the results?"
-    * "What are some of the things that could cause the results to be wrong?"
-
-Think of the first phase of the review (~30 mins) as a technical boss reviewing your work and asking questions about it before green-lighting you to present to the business team. You should practice using the appropriate technical vocabulary to explain yourself. Don't be surprised if the instructor jumps around or sometimes cuts you off - there is a lot of ground to cover, so that may happen.
-
-If any requirements are missing or if significant gaps in understanding are uncovered, be prepared to do one or all of the following:
-* Perform additional data cleanup, visualization, feature selection, modeling and/or model validation
-* Submit an improved version
-* Meet again for another Project Review
-
-What won't happen:
-* You won't be yelled at, belittled, or scolded
-* You won't be put on the spot without support
-* There's nothing you can do to instantly fail or blow it
-
-**Please note: We need to receive the URL of your repository at least 24 hours before and please have the project finished at least 3 hours before your review so we can look at your materials in advance.**
+4.Whats the best month/time of year for buying and selling? (build model to predict year)
 
 
-## Submitting your Project
+## Project Content
 
- You’re almost done! In order to submit your project for review, include the following links to your work in the corresponding fields on the right-hand side of Learn.
+In this project we have combined all essential libraries that we learned so far to create a dynamic project that could yield some results and gain a great experience in learning and understanding how each aspect of the libraries and more important in deriving the results. Overall the process we have acquired the OSEMIN method
 
- 1. **GitHub Repo:** Now that you’ve completed your project in Jupyter Notebooks, push your work to GitHub and paste that link to the right. (If you need help doing so, review the resources [here](https://docs.google.com/spreadsheets/d/1CNGDhjcQZDRx2sWByd2v-mgUOjy13Cd_hQYVXPuzEDE/edit#gid=0).)
-_Reminder: Make sure to also add and commit a pdf of your non-technical presentation to the repository with a file name of presentation.pdf._
-2. **Blog Post:** Include a link to your blog post.
-3. **Record Walkthrough:** Include a link to your video walkthrough.
+√ Obtain and load the dataset
 
- Hit "I'm done" to wrap it up. You will receive an email in order to schedule your review with your instructor.
+√ Scrub and clean the data
+
+√ Explore and understand the data value
+
+√ Model the data through testing processes
+
+√ Interpret the results and conclude
+
+
+
+## Obtain and load the dataset -- https://bit.ly/3gZRRbo
+
+√. Imported Some Essential Libraries to start of with 
+
+ ```import numpy as np
+   import pandas as pd
+   import seaborn as sns
+   import matplotlib.pyplot as plt
+   %matplotlib inline
+
+from scipy import stats
+from sklearn.preprocessing import LabelEncoder
+
+import statsmodels.api as sm
+from statsmodels.formula.api import ols
+import statsmodels.stats.api as sms
+
+
+from sklearn.model_selection import train_test_split
+
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error
+
+from sklearn.feature_selection import RFE 
+```
+
+
+√. Loading and Verifying the Dataset
+
+
+``` data = pd.read_csv('kc_house_data.csv') ```
+
+```print(df.isnull().sum(),'\n\n')
+ print(df.info(),'\n\n')
+ print(df.nunique())
+ print(df[df.duplicated()])
+ ```
+
+
+## Scrubbing and Cleaning Data -- https://bit.ly/2UhsOHo
+√. Replaced all the null values in (waterfront,yr_renovated,sqft_basement)
+
+√. Converted the date column in date time format
+
+√.Converted the 'sqft_basement' from int to float64
+
+√. Converted the 'yr_renovated' and 'sqft_basement' into binary to save it from creating Label Encoder
+
+√. Feature Engineering ::
+
+ Created a new column in the Dataframe that gives the Age of the House and the Percentage of the House Area
  
+ ```df['age'] = df['yr_sold'] - df['yr_built']```
+ ``` df['perc'] = (df['sqft_lot'] - (df['sqft_above'] / df['floors'])) / df['sqft_lot'] ```
  
-## Grading Rubric
-Online students can find a PDF of the grading rubric for the project [here](https://github.com/learn-co-curriculum/dsc-mod-2-project-v2-1/blob/master/mod2_project_rubric.pdf). On-campus students may have different review processes, please speak with your instructor.
+√. Created a function to Remove Outliers
+
+``` 
+    def remove_outliers(df, column_name, threshold=4):
+    z_scores = stats.zscore(df[column_name])
+    indices = np.abs(np.where(z_scores > threshold))
+    return indices[0]
+    
+columns_to_check = ['price', 'bedrooms', 'bathrooms', 'sqft_living', 'sqft_lot']
+
+#['price', 'bedrooms', 'bathrooms', 'sqft_living', 'sqft_lot', 'floors','condition', 'grade', 'sqft_above', 'sqft_basement', 'yr_built', 'yr_renovated', 'zipcode']
+all_indices = []
+for column in columns_to_check:
+    indices = remove_outliers(df, column, threshold=3)
+    all_indices.extend(indices)
+all_indices = np.unique(all_indices)
+
+# Remove outliers 4 standard deviations from mean in all columns
+df = df.drop(index=all_indices)
+df.shape
+```
+
+## Exploratory Data Analysis
+
+#### 1.What are the most/least expensive homes based on zipcodes (cheapest area to live in vs most expensive)?
+
+![image](https://user-images.githubusercontent.com/47164862/83890602-95ef6c00-a711-11ea-9d03-08c141846537.png)
+
+Analysis of EDA::
+~1910 & ~1940's and 2000's are among the highest sold homes.
+Surprisingly yr_build and yr_renovation had correlations of 0.053965 & 0.117858 with the house price
+homes in the 1910's were inspired by the Victotian style architecture. These houses can make a profit by being sold to historical societies or used in movie sets. Renovation is likely negligible because buyers who purchase lived in home probably plan to do renovations of their own, making the current renovations irrelevant
 
 
-## Summary
 
-The end of module projects and project reviews are a critical part of the program. They give you a chance to both bring together all the skills you've learned into realistic projects and to practice key "business judgement" and communication skills that you otherwise might not get as much practice with.
+
+#### 2.What's the lowest grade/condition with the highest profit and vice versa?
+
+![image](https://user-images.githubusercontent.com/47164862/83888356-56278500-a70f-11ea-95ee-b29bb70fbc24.png)
+
+![image](https://user-images.githubusercontent.com/47164862/83888417-68a1be80-a70f-11ea-891d-215b4c3e4bdf.png)
+
+
+Analysis of EDA::
+
+
+The violin plot and the joint plot plotted above derives clearly that there is clearly a great relationship between the "Grade" of the house and "Price". The houses that yield to the most of the least grade i.e grade 3 is about 260,000, where as when we compare with the Grade 12 house, they yield about 1,500,000 .This clearly depicts that as the grade of the houses goes higher the rate of price goes higher which inturns more profit through the sale of King County residential department.
+
+
+
+
+#### 3.Correlation/relationship between yr_built vs grade? (what age is considered vintage/"desirable old"?).
+
+![image](https://user-images.githubusercontent.com/47164862/83890276-2c6f5d80-a711-11ea-872a-c5cbed155e3a.png)
+
+Analysis of EDA::
+
+As grade increases, the price of the home increases. Grade and Price had a (positive) correlation coefficient of 0.667964
+Yr_built and grade had a (positive) correlation of 0.447854. This is low. Homes built in the years 1920-1911 had the lowest grades, and lowest average price sold.Homes built in the year 1984-1975 had the highest grades and average home prices.Homes in the 70s are considered vintage
+
+
+
+
+
+
+####  4.Whats the best month/time of year for buying and selling? (build model to predict year).
+
+![image](https://user-images.githubusercontent.com/47164862/83889014-3cd30880-a710-11ea-907c-442b10f555fb.png)
+
+Analysis of EDA::
+
+
+With the help of the plot graph it is clear that the months of the year does effect on the sale of the house and its prices. This plot graph depicts clearly that the peak month for the Selling houses is 'April' on an average of about $560,000 followed by least month for the sale is February with the average sale of $510,000. As we see there is quite a significant amount of drop in the February but then spikes again March and stays consistent till September or October. 
+Based on the data, this graph shows the average sell prices of homes based on the month of the year. The highs and lows range from a price difference of around 10%.  The peak months to sell are March, April, May, and June - we could assuming this is due to tax return season, and end of the public school year.  The low months, being better for buyers, are December, January, and February - which could be explained by the holidays and low average temperatures
+
+
+## Initializing for Modeling
+√. Created a function to highlight the Multicolinearity with the threshold of 0.75
+``` df_corr=df.corr().abs()
+
+# Creating a function to highlight the correlation above the threshold value of 0.75
+def Colli_thresh(val):
+    """
+    Takes a scalar and returns a string with
+    the css property `'color: red'` for negative
+    strings, black otherwise.
+    """
+    color = 'red' if val > 0.75 else 'black'
+    return 'color: %s' % color
+
+highlight_thresh = df_corr.style.applymap(Colli_thresh)
+highlight_thresh
+```
+√.Created a seaborn heatmap to visualize the multicolinearity among the other columns
+ ``` 
+ corr_cont = df[continuous].corr().abs()
+(corr_cont)
+
+# Mapping the correlation among the continous variable
+sns.heatmap(corr_cont, annot=True)
+b, t = plt.ylim() # discover the values for bottom and top
+b += 0.5 # Add 0.5 to the bottom
+t -= 0.5 # Subtract 0.5 from the top
+plt.ylim(b, t) # update the ylim(bottom, top) values
+plt.show()
+```
+![image](https://user-images.githubusercontent.com/47164862/83902276-b45d6380-a721-11ea-8664-25ef85ea6c7c.png)
+![image](https://user-images.githubusercontent.com/47164862/83902316-c939f700-a721-11ea-8450-d8ff0081f5a5.png)
+
+√. Conducted the Shapiro and KS-Test to check for Normality -- https://bit.ly/37bm8Qk
+√. Converted all the numerical columns into Normal by Log Transformation, Mean Normalization , Standardization and Creating Function
+```
+def norm_feat(series):
+    return (series - series.mean())/series.std()
+for feat in norm_check.columns:
+    df[feat] = norm_feat(df[feat])
+# print(df.describe())
+
+norm_df = norm_feat(norm_check)
+norm_df.head()
+norm_df.hist(figsize  = [8, 8]);
+```
+
+√. Created a dummy variables using Label Encoder and through a simple way of using Pandas ``` pd.get_dummies(x,drop_first=True)```
+
+
+## Modeling for Data -- https://bit.ly/3cAvupU
+
+√. Used ```sns.jointplot() ``` to see the linear regression of all the features in individual graphs
+√. Created a complete Function to Get the Full Regression Analysis
+
+## Model 
+
+![image](https://user-images.githubusercontent.com/47164862/83892405-3b0b4400-a714-11ea-996a-5457eccecd69.png)
+![image](https://user-images.githubusercontent.com/47164862/83892650-92111900-a714-11ea-8222-f8cc9e344c97.png)
+
+## Final Model
+
+√. Used a train test split method model to check linear regression model
+```
+from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random_state=42)
+
+print(len(X_train), len(X_test), len(y_train), len(y_test))
+```
+
+√. Used the same Linear Regression to run the same model in Scikit Learn
+```
+linreg = LinearRegression()
+linreg.fit(X_train, y_train)
+
+# Train-Test Split using Sklearn
+y_hat_train = linreg.predict(X_train)
+y_hat_test = linreg.predict(X_test)
+
+train_mse = mean_squared_error(y_train, y_hat_train)
+test_mse = mean_squared_error(y_test, y_hat_test)
+print('Train Mean Squarred Error:', train_mse)
+print('Test Mean Squarred Error:', test_mse)
+```
+
+√.  Build the function to manually complete the K-Fold Validation
+√.  Used the Cross the Validation Score from Scikit learn model
+```
+cv_5_results  = np.mean(cross_val_score(linreg, X, y, cv=5,  scoring='neg_mean_squared_error'))
+cv_10_results = np.mean(cross_val_score(linreg, X, y, cv=10, scoring='neg_mean_squared_error'))
+cv_20_results = np.mean(cross_val_score(linreg, X, y, cv=20, scoring='neg_mean_squared_error'))
+
+print('5-Fold Cross-Validation: ' ,cv_5_results)
+print('10-Fold Cross-Validation: ' ,cv_10_results)
+print('20-Fold Cross-Validation: ' ,cv_10_results)
+```
+
+## Predictions with the Essential Features
+#### GRADE
+![image](https://user-images.githubusercontent.com/47164862/83893933-3fd0f780-a716-11ea-8388-a7c9b5d66105.png)
+
+#### Square Foot Living
+![image](https://user-images.githubusercontent.com/47164862/83894408-e3220c80-a716-11ea-853f-d4106d5fcae8.png)
+
+#### Count of Bathrooms
+![image](https://user-images.githubusercontent.com/47164862/83894503-fe8d1780-a716-11ea-8375-a7a45abc35e1.png)
+
+
+#### Interpretation
+
+The final linear regression model predicts that the features that could yield the better prices. * The selected features predicts 61% and 65% of the variance of the target price.The P-value indicates that all relationships aren't random and all feature coefficients reveal positive correlation. With the nature of the data irrespective numerous of modeling it ranges the the R2 value between 55% to 65% . The data results can range low in R2 due to some additional factors like outliers,normalization, multicolinearity.
+Train Mean Squared Error yielded 0.00229 where as Test Mean Squared Error yielded 0.002234 which was 0.00005 difference.
+
+#### Y= -7.60*(price) + 1.07*(bedrooms) + 2.94*(bathrooms)+ 4.82*(sqft_living)+ 4.02*(grade)+ 5.54*(yr_built)+ 1.22*(floors)+6.18* (waterfront)
+
+
+## Recommendations
+
+√. Increase the size and the number of the bedrooms::
+ Based on the demographic area of the house, buyers are more attracted towards the style of the bedrooms and the size of the bedroom. In most cases the bedrooms could be large and just few of them or make a decent sized bedrooms and give more features like the ceiling and lighting fixtures and more autonamious tech that could ease them for opening lights, close the blinds. Designs on the ceiling in the bedroom 
+
+√. Increase in the size and the number of bathrooms::
+With the high demand of rooms comes a high demand of the bathrooms. If the house is predicted to be built on large scale. It should be an ease of convenience in placing bathrooms in each floor and not necessarily a full bath but could add just half bath. Add little more designed quality bath tubs and faucets.
+
+√. Size of the House::
+As we discussed earlier in situations compared to size of the bedrooms, there is high possibilty that buyers would love to maintain square foot living of the house in a ratio to scale manner where all the bedrooms are in one proportion where as the living and dining would make a great difference. Not just living area but also the Patio and Lawn should be given a good amount of area. After all the with the size of house there should be some leisure in the big lawn area.
+
+√. Grade and Condition ::-
+Based on the regression these are considered to be the most important features that determines the house prices. There are list of grades that determine whether these are graded with the new stylish models or old school model based on the ranking. So does comes with the condition. Condition of the house determines if the house is in the state of living or not. As we know that the older the homes the conditions gets degraded. Buyers in the market for King County are looking for better quality conditioned houses that not neccessarily are built brand new but would keep it maintained to check for the houses worn and tear condition and update it from time to time.
+
+
+√.  Classify Houses With Vintage:
+It is recommended to suggest the buyers to offer them a competitative better rate when it comes to Vintage Houses that has been taken care for a long period of time.
+
+## Future Work
+As discussed earlier there is great possibilty of outliers, linearity and non-normalized and with the restriction of given time which consices us to give limited result but guide you as one of the best innovative methods to improve the selling prices. But as we continue to build models we can predict best suited houses for the buyers that could potentially be more benefit the firm by analyzing the needs by narrowing the buyers and pin pointing the questions that could yield best houses for the buyers. Also build a model for the sellers and other realty states so that they can predict what prices to be set and what type of houses to build in the upcoming venture based on the demographic area.
+
+## Conclusion
+This concludes the dataset with linear regression model and predictions.
+
