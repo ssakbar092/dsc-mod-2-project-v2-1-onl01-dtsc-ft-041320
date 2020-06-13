@@ -5,8 +5,14 @@ This is the second project which consists of Data Analysis on the Kings County R
 ## -------------------------------------OUTLINE BEGINS------------------------------------- 
 
 This repository consists of the following list of files
+
+
 √ A Complete Linear Regression Analysis along with One of Four Exploratory Data Analysis(EDA) questions answered(Since it was group project)
+
+
 √ A complete ReadMe.md file that gives the outline of the project
+
+
 √ A Blog Post based on the Project that gives an idea to my peers about the project
 
 
