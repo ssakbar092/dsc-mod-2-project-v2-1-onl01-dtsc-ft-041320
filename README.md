@@ -150,7 +150,7 @@ homes in the 1910's were inspired by the Victotian style architecture. These hou
 Analysis of EDA::
 
 
-The violin plot and the joint plot plotted above derives clearly that there is clearly a great relationship between the "Grade" of the house and "Price". The houses that yield to the most of the least grade i.e grade 3 is about 260,000, where as when we compare with the Grade 12 house, they yield about 1,500,000 .This clearly depicts that as the grade of the houses goes higher the rate of price goes higher which inturns more profit through the sale of King County residential department.
+The bar plot and the joint plot plotted above derives clearly that there is clearly a great relationship between the "Grade" of the house and "Price". The houses that yield to the most of the least grade i.e grade 3 is about 260,000, where as when we compare with the Grade 12 house, they yield about 1,500,000 .This clearly depicts that as the grade of the houses goes higher the rate of price goes higher which inturns more profit through the sale of King County residential department.
 
 
 
@@ -292,8 +292,6 @@ print('20-Fold Cross-Validation: ' ,cv_10_results)
 
 The final linear regression model predicts that the features that could yield the better prices. * The selected features predicts 61% and 65% of the variance of the target price.The P-value indicates that all relationships aren't random and all feature coefficients reveal positive correlation. With the nature of the data irrespective numerous of modeling it ranges the the R2 value between 55% to 65% . The data results can range low in R2 due to some additional factors like outliers,normalization, multicolinearity.
 Train Mean Squared Error yielded 0.00229 where as Test Mean Squared Error yielded 0.002234 which was 0.00005 difference.
-
-#### Y= -7.60*(price) + 1.07*(bedrooms) + 2.94*(bathrooms)+ 4.82*(sqft_living)+ 4.02*(grade)+ 5.54*(yr_built)+ 1.22*(floors)+6.18* (waterfront)
 
 
 ## Recommendations
